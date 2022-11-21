@@ -1,13 +1,13 @@
 command //sudo [<player>] [<string=text>]: #To keep your command secure!
   permission: Random.Permission #To keep people from using your command with no permission
-  perm msg: This command does not exist, Please contact a administrator if you think this is a mistake
+  permission message: This command does not exist, Please contact a administrator if you think this is a mistake
   trigger:
     if argument 1 is set:
       if argument 2 is set:
-        make argument 1 send "%colored argument-2%"
+        make argument 1 say "%colored arg-2%"
       else:
         send "&8(&aYour Server's name&8)&3: &fPlease state a text after the player" 
     else:
-        send "&8(&aYour Server's name&8)&3: &fPlease state a online player"
+      send "&8(&aYour Server's name&8)&3: &fPlease state a online player"
         #Thank you for taking the time to read this skript!, Have a nice day.
         #Simplistic but useful, Made by Shadowszz#2678, If you want you may remove the signature.
