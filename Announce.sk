@@ -1,10 +1,11 @@
 command /announce [<string=>]:
+  aliases: broadcast, bc, bcast, broadc, annc, anc
   permission: Announce.Uses
   trigger:
     broadcast " "
-		broadcast " "
-		broadcast "                             &8(&aYourServer'sName&8) &d&lANNOUNCEMENT"
-		broadcast " "
-		broadcast " "
-		broadcast " "
-		broadcast "                                  &5&l» &f%colored arg-1% &5&l«"
+    broadcast " "
+    broadcast "                             &8(&aYourServer'sName&8) &d&lANNOUNCEMENT"
+    broadcast " "
+    broadcast " "
+    broadcast " "
+    broadcast "                                  &5&l» &f%colored arg-1% &5&l«"
