@@ -1,0 +1,19 @@
+command mutechat:
+  permission: Server.Essentials.Admin
+  trigger:
+    if {_chatmuted} is false:
+      set {_chatmuted} to true:
+      broadcast "&8(&aYour Server's Name&8) &fChat has been muted!"
+    else if {_chatmuted} is true:
+      set {_chatmuted} to false
+      broadcast "&8(&aYour Server's Name&8) &fChat has been unmuted!, You may now speak"
+
+on chat:
+  if {_chatmuted} is true:
+    if player does not have permission "Chat.Mute.Bypass"
+      message "&8(&aYour Server's Name&8) &fChat is muted!, You cannot speak now"
+      cancel event
+    else if player has permission "Chat.Mute.Bypass":
+      stop
+
+#If you are looking for something more professional for a chatmute, Use litebans.
