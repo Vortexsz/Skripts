@@ -1,0 +1,22 @@
+command msg [<player>] [<string>]:
+	aliases: w, minecraft:msg, minecraft:w
+	trigger:
+		message "&8(&aYour Server's Name&8) &bFrom: %sender% %colored arg-2%" to arg-1
+		message "&8(&aYour Server's Name&8) &bTo: %arg-1% %colored arg-2%" to sender
+		set {latestreply::%arg-1%} to 120
+
+command reply [<string>]:
+	trigger:
+		if {latestreply::%player%} is set:
+			message "&8(&aYour Server's Name&8) &bFrom: %sender% %colored arg-1%" to {latestreply::%player%}
+			set {latestreply::%arg-1%} to 120
+
+
+
+every 1 second:
+	if {latestreply::%player%} = 120:
+		set {latestreply::%player%} to {latestreply::%player%} - 1
+
+every 1 second:
+	if {latestreply::%player%} = 0:
+		delete {latestreply::%player%}
